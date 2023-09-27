@@ -1,17 +1,49 @@
 :root {
   --black: #000;
   --white: #FFF;
-  --purple: #4F46E5;
+  --purple: #A5B4FC;
+  --medium-purple: #4F46E5;
   --dark-purple: #4338CA;
   --light-purple: #EEF2FF;
-  --light-blue: #D6F9FC;
   --light-gray: #F3F4F6;
+  --gray: #D1D5DB;
   --medium-gray: #777777;
   --main-bg-color: var(--white);
   --main-border-color: var(--light-gray);
   --main-text-color: var(--black);
-  --header-size: 94px;
   --container--size: 1440px;
+}
+
+@media screen and (min-width: 1025px) {
+  :root {
+    --header-size: 94px;
+    --logo-size: 173px;
+    --book-item-size: calc(100% / 3 - 2rem);
+    --heading-1-size: 64px;
+    --heading-2-size: 56px;
+    --paragraph-size: 24px;
+    --copy-size: 1rem;
+    --form-controls-size: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-size: 70px;
+    --logo-size: 125px;
+    --book-item-size: calc(100% / 2 - 2rem);
+    --heading-1-size: 40px;
+    --heading-2-size: 32px;
+    --paragraph-size: 16px;
+    --copy-size: .85rem;
+    --form-controls-size: 100%;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  :root {
+    --book-item-size: 100%;
+  }
 }
 
 html {
@@ -43,11 +75,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 64px;
+  font-size: var(--heading-1-size);
 }
 
 h2 {
-  font-size: 56px;
+  font-size: var(--heading-2-size);
 }
 
 a {
@@ -72,7 +104,7 @@ a:active {
 }
 
 p {
-  font-size: 24px;
+  font-size: var(--paragraph-size);
 }
 
 img {
@@ -89,8 +121,37 @@ small {
   font-size: 100%;
 }
 
+input {
+  border: 1px solid var(--gray);
+  border-radius: .5rem;
+  font-size: 1rem;
+  height: 52px;
+  margin: .5rem;
+  padding: 1rem 2rem;
+  width: var(--form-controls-size);
+}
+
+input::placeholder {
+  color: var(--medium-gray);
+}
+
+input::focus {
+  border-color: var(--purple);
+}
+
 main {
   padding-top: var(--header-size);
+}
+
+.button {
+  border: 0;
+  background-color: var(--medium-purple);
+  border-radius: .25rem;
+  color: var(--main-bg-color);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 1rem 3rem;
 }
 
 /** HEADER **/
@@ -123,14 +184,38 @@ main {
 }
 
 .header__logo {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  width: var(--logo-size);
+}
+
+.header__link,
+.header__logo {
   -webkit-transition: opacity .2s linear;
   transition: opacity .25s linear;
-  display: block;
-  margin: 0;
 }
 
 .header__logo:hover {
   opacity: .75;
+}
+
+.header__menu {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header__link {
+  color: var(--black);
+  font-size: var(--copy-size);
+}
+
+.header__link:hover {
+  opacity: .55;
 }
 
 /** HERO **/
@@ -152,21 +237,11 @@ main {
   background-position: center center;
   border-radius: 24px;
   margin: 0 auto;
+  max-height: 80vh;
   max-width: var(--container--size);
-  padding: 12rem 14rem 24rem;
+  padding: 15% 14% 30%;
   text-align: center;
   width: calc(100% - 48px);
-}
-
-.hero__cta {
-  background-color: var(--purple);
-  border: 0;
-  border-radius: .25rem;
-  color: var(--main-bg-color);
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  padding: 1rem 3rem;
 }
 
 /** BOOKS **/
@@ -198,7 +273,7 @@ main {
 
 .books__item {
   margin: 0 1rem 2rem;
-  max-width: calc(100% / 3 - 2rem);
+  max-width: var(--book-item-size);
   width: 100%;
 }
 
@@ -227,6 +302,7 @@ main {
 .books__badge {
   background-color: var(--white);
   border-radius: .5rem;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.10);
   padding: 1rem 1.5rem;
   position: absolute;
   right: 1rem;
@@ -258,8 +334,8 @@ main {
 }
 
 .books__card:hover .books__name {
-  color: var(--purple);
 }
+color: var(--medium-purple);
 
 .books__card:hover .books__content {
   transform: translateX(1rem);
@@ -312,9 +388,26 @@ main {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--container--size);
-  min-height: 50vh;
+  padding: 15% 4rem;
   text-align: center;
   width: calc(100% - 48px);
+}
+
+.subscribe__form {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.subscribe__button {
+  margin: .5rem;
+  width: var(--form-controls-size);
 }
 
 /** FOOTER **/
@@ -342,7 +435,7 @@ main {
 }
 
 .footer__text {
-  font-size: 1rem;
+  font-size: var(--copy-size);
 }
 
 .footer__button {
