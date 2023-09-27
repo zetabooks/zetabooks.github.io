@@ -20,7 +20,7 @@ html {
 
 body {
   font-display: auto;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--main-bg-color);
   color: var(--main-text-color);
   margin: 0;
