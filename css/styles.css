@@ -1,0 +1,56 @@
+@media screen, print, (prefers-color-scheme: light) {
+  :root {
+    --main-bg-color: white;
+    --main-border-color: gray;
+    --main-text-color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: black;
+    --main-border-color: gray;
+    --main-text-color: white;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-display: auto;
+  font-family: 'Prompt', sans-serif;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+ul, ol {
+  padding: 0 0 0 1rem;
+}
+
+small {
+  font-size: 100%;
+}
