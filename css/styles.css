@@ -293,7 +293,7 @@ main {
 
 .books__cover {
   border-radius: 24px;
-  height: 80%;
+  height: 75%;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -325,17 +325,18 @@ main {
 }
 
 .books__preview {
-  transform: translateY(35%);
+  transform: translateY(35%) scale(.9);
   transition: transform .25s linear;
+  max-width: 60%;
 }
 
 .books__card:hover .books__preview {
-  transform: translateY(0) scale(.85);
+  transform: translateY(0) scale(.9);
 }
 
 .books__card:hover .books__name {
+  color: var(--medium-purple);
 }
-color: var(--medium-purple);
 
 .books__card:hover .books__content {
   transform: translateX(1rem);
@@ -388,7 +389,7 @@ color: var(--medium-purple);
   margin-left: auto;
   margin-right: auto;
   max-width: var(--container--size);
-  padding: 15% 4rem;
+  padding: 10% 4rem;
   text-align: center;
   width: calc(100% - 48px);
 }
