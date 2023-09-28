@@ -10,16 +10,16 @@
     <meta property="og:url" content="https://zetabooks.github.io">
     <meta property="og:title" content="Zetabooks - Daily best-seller books on sale">
     <meta property="og:description" content="Daily best-seller books on sale">
-    <meta property="og:image" content="https://zetabooks.github.io/assets/logo.png">
+    <meta property="og:image" content="https://zetabooks.github.io/assets/images/logo.png">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="zetabooks">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://zetabooks.github.io">
     <meta property="twitter:title" content="Zetabooks - Daily best-seller books on sale">
     <meta property="twitter:description" content="Daily best-seller books on sale">
-    <meta property="twitter:image" content="https://zetabooks.github.io/assets/logo.png">
+    <meta property="twitter:image" content="https://zetabooks.github.io/assets/images/logo.png">
     <meta name="twitter:site" content="@zetabooks">
-    <meta name="twitter:image:src" content="https://zetabooks.github.io/assets/logo.png">
+    <meta name="twitter:image:src" content="https://zetabooks.github.io/assets/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Zetabooks - Daily best-seller books on sale">
     <meta name="twitter:description" content="Daily best-seller books on sale">
@@ -40,24 +40,33 @@
     <title>Zetabooks - Daily best-seller books on sale</title>
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header header--fixed">
       <div class="header__container">
           <a href="/" aria-label="logo" class="header__logo">
             <img src="./assets/images/logo.svg" width="173" height="56" alt="Zetabooks logo">
           </a>
           <nav class="header__menu">
-            <a class="header__link" href="#hero">Home</a>
+            <a class="header__link" href="#">Home</a>
             <a class="header__link" href="#books">Books</a>
             <a class="header__link" href="#subscribe">Subscribe</a>
           </nav>
       </div>
     </header>
     <main>
+      <!-- HERO SECTION -->
       <section id="hero" class="hero">
         <h1>A World of Stories for Unbeatable Prices</h1>
         <p>Discover great daily deals for best-seller books</p>
         <a href="#books" class="button">Explore the titles</a>
+        <div class="hero__slider">
+          <img class="hero__image hero__image--one" src="./assets/images/hero-book-1.png" alt="Hero Book Cover 1" width="310" height="493" loading="lazy">
+          <img class="hero__image hero__image--two" src="./assets/images/hero-book-2.png" alt="Hero Book Cover 2" width="310" height="493" loading="lazy">
+          <img class="hero__image hero__image--three" src="./assets/images/hero-book-3.png" alt="Hero Book Cover 3" width="310" height="493" loading="lazy">
+          <img class="hero__image hero__image--four" src="./assets/images/hero-book-4.png" alt="Hero Book Cover 4" width="310" height="493" loading="lazy">
+        </div>
       </section>
+      <!-- BOOKS SECTION -->
       <section id="books" class="books">
         <div class="books__container">
           <h2 class="books__title">Top Books on Sale</h2>
@@ -225,6 +234,7 @@
           </ul>
         </div>
       </section>
+      <!-- SUBSCRIBE SECTION -->
       <section id="subscribe" class="subscribe">
         <h2>Subscribe to get daily top titles</h2>
         <p>Don’t worry, we don’t send spam or unnecessary emails</p>
@@ -234,6 +244,7 @@
         </form>
       </section>
     </main>
+    <!-- FOOTER -->
     <footer class="footer">
       <p class="footer__text">© 2020-2023, Zetabooks.</p>
       <nav class="footer__nav">
