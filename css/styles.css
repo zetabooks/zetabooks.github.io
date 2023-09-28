@@ -9,6 +9,7 @@
   --light-gray: #F3F4F6;
   --gray: #D1D5DB;
   --medium-gray: #777777;
+  --dark-gray: #3A3945;
   --main-bg-color: var(--white);
   --main-border-color: var(--light-gray);
   --main-text-color: var(--black);
@@ -145,14 +146,19 @@ main {
 }
 
 .button {
-  border: 0;
   background-color: var(--medium-purple);
+  border: 0;
   border-radius: .25rem;
   color: var(--main-bg-color);
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   padding: 1rem 3rem;
+  transition: background-color .25s linear;
+}
+
+.button:hover {
+  background-color: var(--dark-purple);
 }
 
 /** HEADER **/
@@ -284,6 +290,7 @@ main {
   position: absolute;
   right: 0;
   transform: translateY(50%);
+  transition: opacity .25s linear;
   width: 90%;
 }
 
@@ -379,7 +386,7 @@ main {
 }
 
 .books__price {
-  color: var(--medium-gray);
+  color: var(--dark-gray);
   font-size: 16px;
   font-weight: bold;
   text-decoration: line-through;
